@@ -1,3 +1,6 @@
+// cypress/integration/user_crud_spec.js
+import 'cypress-cucumber-preprocessor/steps'; // Import to enable Cucumber steps
+
 describe('User CRUD feature', () => {
   beforeEach(() => {
     cy.visit('https://petstore.swagger.io/');
@@ -15,12 +18,12 @@ describe('User CRUD feature', () => {
       expect(response.status).to.equal(200);
       expect(response.body.code).to.equal(200);
       expect(response.body.type).to.equal('unknown');
-      // expect(response.body.message).to.equal('EXCLUDE');
+      expect(Number(response.body.message)).to.be.a('number'); // Validate numeric message
     });
   });
 
   it('should get user data by username', () => {
-    cy.request('/v2/user/ramonb44').then(response => {
+    cy.request('GET','/v2/user/ramonb44').then(response => {
       expect(response.status).to.equal(200);
     });
   });

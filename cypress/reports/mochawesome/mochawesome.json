@@ -1,0 +1,159 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-09-05T04:44:32.211Z",
+    "end": "2023-09-05T04:44:35.602Z",
+    "duration": 3391,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "95bede9a-9502-49f9-9162-03f8d60ef872",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\api-tests\\todo.cy.js",
+      "file": "cypress\\e2e\\integration\\api-tests\\todo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4052aaad-9ea4-4543-a337-71fe822c99e7",
+          "title": "User CRUD feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a new user",
+              "fullTitle": "User CRUD feature should create a new user",
+              "timedOut": null,
+              "duration": 1823,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', '/v2/user', {\n  username: 'ramonb44',\n  firstname: 'ramon',\n  lastname: 'aguado',\n  email: 'aguado.soft@gmail.com',\n  password: '#NewPass',\n  phone: '918285752'\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.code).to.equal(200);\n  expect(response.body.type).to.equal('unknown');\n  expect(Number(response.body.message)).to.be.a('number'); // Validate numeric message\n});",
+              "err": {},
+              "uuid": "d77721f3-8327-4570-ac4a-d807afba1d11",
+              "parentUUID": "4052aaad-9ea4-4543-a337-71fe822c99e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should get user data by username",
+              "fullTitle": "User CRUD feature should get user data by username",
+              "timedOut": null,
+              "duration": 460,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', '/v2/user/ramonb44').then(response => {\n  expect(response.status).to.equal(200);\n});",
+              "err": {},
+              "uuid": "2fb6c9af-20b5-429d-9406-a4122bb7a7d7",
+              "parentUUID": "4052aaad-9ea4-4543-a337-71fe822c99e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should update user firstname and email",
+              "fullTitle": "User CRUD feature should update user firstname and email",
+              "timedOut": null,
+              "duration": 450,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('PUT', '/v2/user/ramonb44', {\n  username: 'ramonb44',\n  firstname: 'ramon',\n  lastname: 'aguado',\n  email: 'aguado.soft@gmail.com',\n  password: '#NewPass',\n  phone: '918285752'\n}).then(response => {\n  expect(response.status).to.equal(200);\n});",
+              "err": {},
+              "uuid": "a392778d-0d0b-43de-b023-73dcf10f6eb8",
+              "parentUUID": "4052aaad-9ea4-4543-a337-71fe822c99e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete user by username",
+              "fullTitle": "User CRUD feature should delete user by username",
+              "timedOut": null,
+              "duration": 448,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('DELETE', '/v2/user/ramonb44').then(response => {\n  expect(response.status).to.equal(200);\n});",
+              "err": {},
+              "uuid": "c6a4f56f-8c2c-428c-b9a7-b6b6c38b3f51",
+              "parentUUID": "4052aaad-9ea4-4543-a337-71fe822c99e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d77721f3-8327-4570-ac4a-d807afba1d11",
+            "2fb6c9af-20b5-429d-9406-a4122bb7a7d7",
+            "a392778d-0d0b-43de-b023-73dcf10f6eb8",
+            "c6a4f56f-8c2c-428c-b9a7-b6b6c38b3f51"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3181,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

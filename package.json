@@ -4,7 +4,9 @@
   "description": "test example",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "clean:screenshots": "cypress run --env cleanScreenshots=true"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,10 @@
     "@angular/common": "^16.2.3",
     "@angular/core": "^16.2.3",
     "@angular/platform-browser-dynamic": "^16.2.3",
-    "cypress": "^13.1.0"
+    "cucumber": "^6.0.7",
+    "cypress": "^13.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "mochawesome": "^7.1.3"
   }
 }

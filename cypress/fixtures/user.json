@@ -1,0 +1,26 @@
+
+{
+    "examples": [
+      {
+        "data": {
+          "username": "ramonb44",
+          "firstname": "ramon",
+          "lastname": "aguado",
+          "email": "aguado.soft2016@gmail.com",
+          "password": "#NewPass",
+          "phone": "918285752"
+        }
+      },
+      {
+        "data": {
+          "username": "ramonb44",
+          "firstname": "ramon",
+          "lastname": "apaza",
+          "email": "ramon.b.aguado@gmail.com",
+          "password": "#NewPass!",
+          "phone": "918285752"
+        }
+      }
+    ]
+  }
+  
